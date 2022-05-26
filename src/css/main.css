@@ -8,10 +8,11 @@
     text-align: center;
     background-color: rgb(19, 18, 18);
 }
-.menu ul li{
+.menu ul li {
     display: inline-block;
+    justify-content: center;
+    align-items: center;
     padding: 20px 60px;
-    
 }
 .menu ul li a{
     text-decoration: none;
@@ -22,3 +23,13 @@
     opacity: 1;
     transition: 1s;
 }
+
+@media screen and (max-width: 700px) {
+    .menu ul li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 20px 60px;
+    }
+  }
