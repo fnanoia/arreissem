@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica;
+}
+
+.menu {
+    text-align: center;
+    background-color: rgb(19, 18, 18);
+}
+.menu ul li{
+    display: inline-block;
+    padding: 20px 60px;
+    
+}
+.menu ul li a{
+    text-decoration: none;
+    color: white;
+}
+.menu ul li:hover{
+    background-color: rgb(69, 102, 63);
+    opacity: 1;
+    transition: 1s;
+}
