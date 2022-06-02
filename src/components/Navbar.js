@@ -1,7 +1,7 @@
 import CartWidget from "./CartWidget";
 
-function Navbar(props){
-    console.log(props.test);
+function Navbar(){
+    
     return (
     <div className="menu">
         <ul>
