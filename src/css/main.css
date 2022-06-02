@@ -4,9 +4,20 @@
     font-family: Helvetica;
 }
 
+@media screen and (max-width: 700px) {
+    .menu ul li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 20px 60px;
+    }
+}
+
+/*Navbar*/
 .menu {
     text-align: center;
-    background-color: rgb(19, 18, 18);
+    background-color: rgb(68, 146, 54);
 }
 .menu ul li {
     display: inline-block;
@@ -16,20 +27,38 @@
 }
 .menu ul li a{
     text-decoration: none;
-    color: white;
+    color: white; 
 }
-.menu ul li:hover{
-    background-color: rgb(69, 102, 63);
+.menu ul li a:hover{
+    color: rgb(69, 102, 63);
     opacity: 1;
-    transition: 1s;
+    transition: 2s;
 }
-
-@media screen and (max-width: 700px) {
-    .menu ul li {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        padding: 20px 60px;
-    }
-  }
+.menu ul .material-symbols-outlined{
+    color: white;
+      font-variation-settings:
+      'FILL' 1,
+      'wght' 200,
+      'GRAD' 0,
+      'opsz' 24
+}
+.menu ul .material-symbols-outlined:hover{
+    color: rgb(69, 102, 63);
+    opacity: 1;
+    transition: 2s;
+}
+    
+/*Hello*/
+.greeting{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px 5px;
+}  
+.greeting:hover{
+    transition: 1s;
+    font-size: 8vh;
+    background-color: rgb(69, 102, 63);
+    color: white;  
+}
