@@ -62,3 +62,18 @@
     background-color: rgb(69, 102, 63);
     color: white;  
 }
+
+/*ItemCounter*/
+.item__counter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.item__counter button{
+    padding: 10px;
+}
+.item__counter div{
+    margin: 10px;
+    padding: 10px;
+}
