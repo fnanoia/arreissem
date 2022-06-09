@@ -28,14 +28,14 @@ function ItemCount({initial, stock, onAdd}){
   return (
     <>
     <div className="item__counter">
-        <h3>RandomProduct</h3>
     <div><button onClick={restar}>-</button></div>
     <div>{counter}</div>
     <div><button onClick={sumar}>+</button></div>
-    <div><button onClick={agregar}>Agregar al carrito</button></div>
+    <div><button onClick={agregar}>Agregar</button></div>
     </div>
     </>
   )
 }
+
 
 export default ItemCount;
