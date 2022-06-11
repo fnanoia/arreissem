@@ -19,6 +19,20 @@ const products = [
     description: "Velocidad: 9500 rpm",
     price: "13000",
     pictureUrl: "https://www.bourlot.com/1343-thickbox_default/amoladora-angular-115mm-1400w-dewalt-d28114-ar.jpg"
+},
+{
+    id: "04",
+    title: "Lijadora orbital Skil",
+    description: "Potencia 600W. Recolector de polvo",
+    price: "11500",
+    pictureUrl: "https://indufer.com.ar/wp-content/uploads/2018/07/lijadora-orbital-skil-7351-200watts-ex-7003-D_NQ_NP_748101-MLA20283931594_042015-F-1.jpg"
+},
+{
+    id: "05",
+    title: "Caladora Makita",
+    description: "Potencia 720W. 6 velocidades",
+    price: "22000",
+    pictureUrl: "https://disfervilera.es/794-thickbox_default/caladora-makita-jv0600k.jpg"
 }
 ];
 
