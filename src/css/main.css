@@ -91,15 +91,6 @@ body{
     width: 100px;
 }
 
-/*Hello*/
-.greeting{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 10px 5px;
-}  
-
 /*Categories*/
 .category__item{
     display: flex;
@@ -151,11 +142,23 @@ body{
 .card__item img{
     width: 100%;
 }
-.card__item h3{
-    padding: 10px 20px;
+.card__item h4{
+    padding: 20px 0px;
 }
 .card__item p{
     font-weight: 300;
+}
+.card__item button{
+    padding: 10px;
+    background-color: #232F34;
+    color: #E9E9EB;
+    border: 0px;
+    align-items: center;
+}
+.card__item button:hover{
+    background-color: #F9AA33;
+    opacity: 1;
+    transition: 2s;
 }
 
 /*Details*/
@@ -241,3 +244,31 @@ body{
     margin: 5px;
     text-align: right;
 }
+
+/*Loader*/
+.lds-dual-ring {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    margin: 50px;
+  }
+  .lds-dual-ring:after {
+    content: " ";
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 6px solid #F9AA33;
+    border-color: #F9AA33 transparent #F9AA33 transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+  }
+  @keyframes lds-dual-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  

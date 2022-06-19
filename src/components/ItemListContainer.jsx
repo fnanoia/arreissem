@@ -1,35 +1,29 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { customFetch, getProductsByCategory } from "../utils/asyncMock";
 import ItemList from "./ItemList";
-import asyncMock from "../utils/asyncMock";
-import products from "../utils/Products";
 
-function ItemListContainer({greeting}){
+function ItemListContainer(){
 
     const [items, setItems] = useState([]);
+    const {category} = useParams();
+
 
     useEffect(() =>{
-        asyncMock(3000, products)
-        .then(res => setItems(res))
-    }, [items]);
+        if(category === undefined){
+        customFetch().then(res => setItems(res))}
+        else{
+        getProductsByCategory(category).then(res => setItems(res))}
+    }, [category]);
     
-    if(items.length > 0){
-    return (
-    <>
-        <div className="greeting">{greeting}</div>
+    return (    
         <div className="item__list">
-            <ItemList products={items} />
+            {
+            (items.length > 0) ?
+            <ItemList products={items} /> : <div className="lds-dual-ring"></div>
+            }      
         </div>
-        
-    </>
-    )
-    }else{
-        return(
-            <div>
-               <div className="greeting">{greeting}</div>
-               <p>Cargando...</p> 
-            </div>
         )
-    }
 };
 
 export default ItemListContainer;

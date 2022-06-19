@@ -26,14 +26,12 @@ function ItemCount({initial, stock, onAdd}){
     }
 
   return (
-    <>
     <div className="item__counter">
     <div><button onClick={restar}>-</button></div>
     <div>{counter}</div>
     <div><button onClick={sumar}>+</button></div>
     <div><button onClick={agregar}>Agregar</button></div>
     </div>
-    </>
   )
 }
 
