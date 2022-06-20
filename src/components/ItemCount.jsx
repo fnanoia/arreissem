@@ -1,7 +1,9 @@
 import { useState } from "react";
 
 function ItemCount({initial, stock, onAdd}){
+
     const [counter, setCounter] = useState(initial);
+
     function sumar(){
         if(counter < stock){
         setCounter(counter + 1);
@@ -17,11 +19,10 @@ function ItemCount({initial, stock, onAdd}){
     function agregar(){
         if(counter > stock){
         console.log("Out of stock");
-        }else if(counter == 0){
+        }else if(counter === 0){
         console.log("Debes seleccionar al menos 1 producto");
         }else{
-        console.log(`Confirmar compra de ${counter} productos`)
-        console.log(onAdd);
+        onAdd(counter);
         }
     }
 

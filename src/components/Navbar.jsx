@@ -17,7 +17,7 @@ function Navbar(){
             <li><Link to="/">Productos</Link></li>
             <li><Link to="/">Service</Link></li>
             <li><Link to="/">Contacto</Link></li>
-            <li><Link to="/"><CartWidget /></Link></li>
+            <li><Link to="/cart"><CartWidget /></Link></li>
         </ul>
     </div>
     </>

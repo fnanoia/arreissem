@@ -10,7 +10,7 @@ function Footer(){
         <ul>
             <li><a href="/"><SiFacebook/></a></li>
             <li><a href="/"><SiInstagram/></a></li>
-            <li><a href="/"><SiGithub/></a></li>
+            <li><a href="https://github.com/fnanoia"><SiGithub/></a></li>
             <li><a href="/"><SiTwitter/></a></li>
     
         </ul>
