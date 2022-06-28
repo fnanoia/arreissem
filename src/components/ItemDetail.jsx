@@ -1,31 +1,33 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import {Link} from "react-router-dom";
-import CartWidget from "./CartWidget";
 import ItemCount from "./ItemCount";
+import { context } from "./CartContext";
 
-function ItemDetail({ id, title, description, price, pictureUrl, stock }) {
 
-    const [cart, setCart] = useState(true);
+function ItemDetail({ product }) {
+
+    const [cartBtn, setCartBtn] = useState(true);
+    const { addProduct } = useContext(context);
 
     const onAdd = (selectedCounter) => {
-            setCart(false);
-            console.log(`Agregado al carrito: x${selectedCounter} ${title}`);
+            setCartBtn(false);
+            addProduct(product, selectedCounter);
         }
     
     return(
         <div className="card__item__detail">
-        <div><img alt={id} src={pictureUrl}/></div>
-        <div><h4>{title}</h4></div>
-        <div><p>{description}</p>
-        <p>${price}</p></div>
+        <div><img alt={product.id} src={product.pictureUrl}/></div>
+        <div><h4>{product.title}</h4></div>
+        <div><p>{product.description}</p>
+        <p>${product.price}</p></div>
         {
-        (cart) ?
-        <ItemCount initial={1} stock={stock} onAdd={onAdd} /> :
+        (cartBtn) ?
+        <ItemCount initial={1} stock={product.stock} onAdd={onAdd} /> :
         <>
         <p>Agregado al carrito</p>
         <div className="card__item__detail__added">
         <button>
-        <Link to="/cart">Confirmar compra<CartWidget /></Link>
+        <Link to="/cart">Confirmar compra</Link>
         </button>
         </div>
         </>
