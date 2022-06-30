@@ -12,6 +12,7 @@
     margin: 0;
     padding: 0;
     font-family: Helvetica;
+    text-decoration: none;
 }
 
 @media screen and (max-width: 700px) {
@@ -59,7 +60,12 @@ body{
     color:#E9E9EB;
     padding-left: 5px;
     padding-right: 5px;
+    
 }
+.menu ul div{
+    height: 30px;
+}
+
 /*Logo*/
 .menu__logo{
     display: flex;
@@ -135,7 +141,7 @@ body{
 .card__item{
     padding: 10px 15px;
     margin: 10px 30px;
-    max-width: 350px;
+    max-width: 300px;
     background-color: white;
     border: 1px solid #E9E9EB;
     border-radius: 3%;
@@ -177,7 +183,7 @@ body{
 .card__item__detail{
     padding: 10px 15px;
     margin: 10px 30px;
-    max-width: 600px;
+    max-width: 400px;
     background-color: white;
     border: 1px solid #E9E9EB;
     border-radius: 3%;
@@ -243,7 +249,22 @@ body{
     margin: 10px;
     padding: 10px;
 }
-
+/*Cart Checkout*/
+.cart__checkout{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 100px;
+}
+.cart__table{
+    margin: 0px;
+    padding: 0px;
+}
+.cart__table td{
+    margin: 0px;
+    padding: 60px;
+}
 /*Footer*/
 .footer {
     text-align: center;

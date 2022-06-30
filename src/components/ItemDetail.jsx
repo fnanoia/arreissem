@@ -27,7 +27,7 @@ function ItemDetail({ product }) {
         <p>Agregado al carrito</p>
         <div className="card__item__detail__added">
         <button>
-        <Link to="/cart">Confirmar compra</Link>
+        <Link to="/cart">Terminar mi compra</Link>
         </button>
         </div>
         </>

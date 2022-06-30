@@ -14,10 +14,9 @@ function Navbar(){
     <div className="menu">
         <ul>
             <li><Link to="/">Home</Link></li>
-            <li><Link to="/">Productos</Link></li>
-            <li><Link to="/">Service</Link></li>
+            <li><Link to="/">Productos</Link></li>            
             <li><Link to="/">Contacto</Link></li>
-            <li><Link to="/cart"><CartWidget /></Link></li>
+            <div><Link to="/cart"><CartWidget /></Link></div>
         </ul>
     </div>
     </>
