@@ -249,22 +249,52 @@ body{
     margin: 10px;
     padding: 10px;
 }
-/*Cart Checkout*/
-.cart__checkout{
+
+/*Cart*/
+.cart__display{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    margin-bottom: 100px;
+    padding: 10px 20px;
+    width: 800px;
+    margin: 20px;
+    margin-left: auto;
+    margin-right: auto;
 }
-.cart__table{
-    margin: 0px;
-    padding: 0px;
+.cart__display__header div{
+    display: inline-block;
+    
 }
-.cart__table td{
-    margin: 0px;
-    padding: 60px;
+.cart__display__body div{
+    display: inline-block;
+    padding: 20px;
+    
 }
+.cart__display__footer div{
+    display: inline-block;
+    margin: 20px;
+}
+.cart__form{
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 20px;
+    width: 400px;
+    background-color: #F9AA33;
+}
+.cart__form form input{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+   
+
+    
+}
+
 /*Footer*/
 .footer {
     text-align: center;
@@ -312,7 +342,7 @@ body{
     border-radius: 50%;
     border: 6px solid #F9AA33;
     border-color: #F9AA33 transparent #F9AA33 transparent;
-    animation: lds-dual-ring 1.2s linear infinite;
+    animation: lds-dual-ring 5s linear infinite;
   }
   @keyframes lds-dual-ring {
     0% {

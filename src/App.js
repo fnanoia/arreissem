@@ -7,6 +7,12 @@ import ItemDetailContainer from "./components/ItemDetailContainer";
 import ItemCategories from "./components/ItemCategories";
 import { FunctionProvider } from "./components/CartContext";
 
+//Para agregar productos a la BD
+/*import { addDoc } from "firebase/firestore";
+import products from "./utils/Products";
+import { collectionProducts } from "./Firebase";
+products.map((prod) => addDoc(collectionProducts, prod));*/
+
 function App(){
     return (
     <BrowserRouter>
@@ -19,7 +25,7 @@ function App(){
             <Route path="/item/:id" element={<ItemDetailContainer />} />
             <Route path="/category/:category" element={<ItemListContainer />} />
             <Route path="/cart" element={<Cart />} />
-        </Routes>
+    </Routes>
 
     </FunctionProvider>
     <Footer />

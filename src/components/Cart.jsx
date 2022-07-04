@@ -2,6 +2,8 @@ import { useContext } from "react";
 import { context } from "./CartContext";
 import CartItem from "./CartItem";
 import {Link} from "react-router-dom";
+import Form from "./Form";
+
 
 function Cart(){
 
@@ -21,15 +23,50 @@ function Cart(){
             </Link>
             </div>
             :
+            <>
+            <div className="cart__display">
+                <div>
+                  
+                  <div className="cart__display__header">
+                    <div><h3>Mi carrito</h3></div>
+                    <div><button onClick={clearCart}>Clear</button></div>
+                  </div>
+
+                  <div>
+                  {cart.map((prod) =>
+                  <CartItem 
+                  id = {prod.id} title = {prod.title} price = {prod.price} quantity = {prod.quantity} pictureUrl = {prod.pictureUrl}  key={prod.id} />
+                  )}
+                  </div>
+
+                  <div className="cart__display__footer">
+                    <div>Total: {totalPrice()}</div>
+                   
+                  </div>
+                </div>
+            </div>
+            <Form />
+            </>
+            }
+        </div>
+        )
+}
+
+export default Cart;
+
+/*
+
+-----------------
+
             <table className="cart__table">
             <thead>         
               <tr>
-                <th colspan="4"><h3>Mi carrito</h3></th>
+                <th colSpan="4"><h3>Mi carrito</h3></th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td colspan="4">
+                <td colSpan="4">
                     {cart.map((prod) =>
                         <CartItem 
                         id = {prod.id}
@@ -41,14 +78,10 @@ function Cart(){
                 </td>
               </tr>
               <tr>
-                <td colspan="2"><button onClick={clearCart}>Clear</button></td>
-                <td colspan="2">Total: {totalPrice()}</td>
+                <td colSpan="2"><button onClick={clearCart}>Clear</button></td>
+                <td colSpan="2">Total: {totalPrice()}</td>
               </tr>
             </tbody>
             </table>
-            }
-        </div>
-        )
-}
 
-export default Cart;
+*/

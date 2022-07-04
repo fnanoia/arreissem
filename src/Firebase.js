@@ -1,15 +1,18 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore";
+import { getFirestore, collection } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDkf3CqVLPM1H8J70H_sczHHgvXwGQajTU",
-  authDomain: "arreissem-react.firebaseapp.com",
-  projectId: "arreissem-react",
-  storageBucket: "arreissem-react.appspot.com",
-  messagingSenderId: "380902347740",
-  appId: "1:380902347740:web:cec2ecbfc244b8ad7b7519"
+  apiKey: "AIzaSyCUi2xjas070TN7Cs4otSLF-IWaqKlK9gk",
+  authDomain: "arreissem.firebaseapp.com",
+  projectId: "arreissem",
+  storageBucket: "arreissem.appspot.com",
+  messagingSenderId: "663363313761",
+  appId: "1:663363313761:web:80b0a3afdf4001d9ce4a20"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-export const db = getFirestore(app);
+
+const db = getFirestore(app);
+
+export const collectionProducts = collection(db, "products");
