@@ -1,21 +1,28 @@
-const Form = () => {
+const Form = ({formData, handleOnChange, handleSubmit}) => {
 
-    //const [data, setData] = useState();
-
-    /*const handleClick = (e) =>{
-
-    console.log(e.event.target);
-
-   }*/
-
-  return (
+    return (
     <div className="cart__form">
         <h3>Confirmar compra</h3>
         <form>
-            <input type="text" name="name" placeholder="Nombre" />
-            <input type="email" name="email" placeholder="Email" />
-            <input type="number" name="phone" placeholder="Telefono" />
-            <input type="button" value="Confirmar" /*onClick={handleClick}*/ ></input>
+            <input name="nombre" 
+            type="text"
+            placeholder="Nombre" 
+            onChange={handleOnChange}
+            value={formData.value}/>
+
+            <input name="email" 
+            type="email" 
+            placeholder="Email"
+            onChange={handleOnChange}
+            value={formData.value}/>
+            
+            <input name="telefono" 
+            type="number" 
+            placeholder="Telefono"
+            onChange={handleOnChange}
+            value={formData.value}/>
+
+            <button onClick={handleSubmit}>Comprar</button>
         </form>
     </div>
   )

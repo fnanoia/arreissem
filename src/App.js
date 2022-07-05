@@ -28,7 +28,7 @@ function App(){
     </Routes>
 
     </FunctionProvider>
-    <Footer />
+    {/*<Footer />*/}
     </BrowserRouter>
     )
 };
