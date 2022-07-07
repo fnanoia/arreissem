@@ -10,6 +10,9 @@ import { db } from "../Firebase";
 
 function Cart(){
 
+  //estado que almacena el id de la "orden de compra"
+  const [dataId, setDataId] = useState();
+
   //crear un estado para los inputs del form. puede ser un objeto o muchos estados
     const [formData, setFormData] = useState({
       nombre : "",
@@ -20,7 +23,7 @@ function Cart(){
     //traigo el contexto
     const { cart, clearCart, totalPrice } = useContext(context);
 
-    //funcion que maneja los eventos del formulario
+    //funcion que maneja los eventos del formulario controlado. referencio el target
     const handleOnChange = (e) =>{
 
       const { name, value } = e.target;
@@ -56,16 +59,27 @@ function Cart(){
     const collectionOrders = collection(db, "orders");
     addDoc(collectionOrders, firebaseObject)
     .then((res) => {
-      console.log(res);
-      console.log(res.id);
+      setDataId(res.id);
 
       //una vez que hago la compra, limpio el carrito. agregar un effecto para jugar con los renders
       clearCart();
+    })
+    .catch((err) => {
+      console.error(err);
     });
     }
     
+    //agregar condicional if para mostrar la orden de compra
     //renderizar los elementos del carrito. con funcionalidad agregar, quitar, limpiar carrito
     //si no hay productos en el carrito mostrar un mensaje que avise y un boton que regrese a la navegacio
+    
+    if(dataId !== undefined){
+      return(
+        <>
+        <p>Gracias por su compra. Su numero de orden es {dataId}</p></>
+      )
+    }else{
+
 
     return(
     
@@ -107,5 +121,5 @@ function Cart(){
         </div>
         )
 }
-
+}
 export default Cart;
