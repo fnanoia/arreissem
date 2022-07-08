@@ -2,7 +2,7 @@ const Form = ({formData, handleOnChange, handleSubmit}) => {
 
     return (
     <div className="cart__form">
-        <h3>Confirmar compra</h3>
+        <div><h3>Confirmar compra</h3></div>
         <form>
             <input name="nombre" 
             type="text"

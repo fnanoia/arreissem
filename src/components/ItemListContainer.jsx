@@ -13,14 +13,12 @@ function ItemListContainer(){
 
     useEffect(() =>{
 
-        //creo una referencia a mi llamado a la BD que importe desde Firebase.js
         const ref = category 
         ?
         query(collectionProducts, where("category", "==", category))
         :
         collectionProducts;
         
-        //metodo getDocs retorna una promesa, le aplico el then para administrar los datos
         getDocs(ref).then((response) => {
             //creo una const para almacenar la respuesta de la promesa, es decir los datos
             //lo mapeo por que la promesa me retorna un array con los productos

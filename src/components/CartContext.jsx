@@ -10,8 +10,6 @@ export const FunctionProvider = ({children}) => {
     const [quantity, setQuantity] = useState(0);
     const [total, setTotal] = useState(0);
 
-    
-    //Verificar si el id del producto ya existe en el carrito. retorna true/false
     const isOnCart = (id) =>{
         const cartFind = cart.find(((prod) => (prod.id === id)));
         if (cartFind !== undefined) {
@@ -20,7 +18,6 @@ export const FunctionProvider = ({children}) => {
             return false}
     }
 
-    //Actualizar widget que muestra cantidad de productos agregados al carrito
     const updateWidget = () =>{
         let quantity = 0;
         cart.forEach((product) => {
@@ -29,7 +26,6 @@ export const FunctionProvider = ({children}) => {
         return quantity
     }
 
-    //Calcular el total de la compra
     const totalPrice = () =>{
         let total = 0;
         cart.forEach((product) => {
@@ -38,7 +34,6 @@ export const FunctionProvider = ({children}) => {
         return total
     }
     
-    //Agregar producto
     const addProduct = (product, quantity) =>{
         
         const cartSpread = [...cart];
@@ -56,18 +51,15 @@ export const FunctionProvider = ({children}) => {
         }
     }
 
-    //Eliminar producto
     const removeProduct = (id) =>{
         const cartFilter = cart.filter((prod) => (prod.id !== id));
         setCart(cartFilter);
     }
 
-    //Limpiar carrito
     const clearCart = () =>{
         setCart([]);
     }
 
-    
     const contextValues = {
         cart : cart,
         quantity: quantity,

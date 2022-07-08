@@ -251,48 +251,64 @@ body{
 }
 
 /*Cart*/
+.cart__display__empty{
+    margin-left: auto;
+    margin-right: auto;
+}
+.cart__display__empty div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 30px;
+}
 .cart__display{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    padding: 10px 20px;
     width: 800px;
-    margin: 20px;
     margin-left: auto;
     margin-right: auto;
-}
-.cart__display__header div{
-    display: inline-block;
-    
 }
 .cart__display__body div{
     display: inline-block;
+    max-width: 200px;
     padding: 20px;
-    
+    margin: 30px;
 }
 .cart__display__footer div{
     display: inline-block;
-    margin: 20px;
+    margin: 50px;
 }
 .cart__form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 10px 20px;
+    width: 450px;
     margin-left: auto;
     margin-right: auto;
-    padding: 10px 20px;
-    width: 400px;
     background-color: #F9AA33;
+    margin-bottom: 20px;
 }
-.cart__form form input{
+.cart__form input{
+    width: 400px;
+    margin: 10px;
+}
+.cart__form button{
+    width: 100px;
+    margin: 10px;
+}
+.cart__display__order{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 10px;
-   
-
-    
+    padding: 50px;
 }
 
 /*Footer*/
