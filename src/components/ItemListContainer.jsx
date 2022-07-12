@@ -1,17 +1,21 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-
-import ItemList from "./ItemList";
 import { collectionProducts } from "../Firebase";
 import { getDocs, query, where } from "firebase/firestore";
+import ItemList from "./ItemList";
+import Loader from "./Loader";
 
 function ItemListContainer(){
 
     const [items, setItems] = useState([]);
+    const [loading, setLoading] = useState(true);
+    
     const {category} = useParams();
 
 
     useEffect(() =>{
+
+        setLoading(false);
 
         const ref = category 
         ?
@@ -38,6 +42,7 @@ function ItemListContainer(){
         });
 
     }, [category]);
+
 //opcional agregar una nueva propiedad al objeto que cargamos a la coleccion
 //esta es la que se va a mostrar cuando naveguemos a items/id
 //actualmente la ruta nos muestra el id automatico de Firebase
@@ -46,9 +51,11 @@ function ItemListContainer(){
     return (    
         <div className="item__list">
             {
-            (items.length > 0) ?
-            <ItemList products={items} /> : <div className="lds-dual-ring"></div>
-            }      
+            (loading) ?
+            <Loader />
+            :
+            <ItemList products={items} /> 
+            }       
         </div>
         )
 };
