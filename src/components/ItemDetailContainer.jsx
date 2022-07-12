@@ -3,13 +3,19 @@ import { useParams } from "react-router-dom";
 import ItemDetail from "./ItemDetail";
 import { collectionProducts } from "../Firebase";
 import { getDoc, doc } from "firebase/firestore";
+import Loader from "./Loader";
+
 
 
 function ItemDetailContainer () {
     const [item, setItem] = useState({});
+    const [loading, setLoading] = useState(true);
     const {id} = useParams();
    
     useEffect(() =>{
+
+        setLoading(false);
+
         const ref = doc(collectionProducts, id);
         getDoc(ref).then((response) => {            
             setItem({
@@ -25,7 +31,11 @@ function ItemDetailContainer () {
 
     return(
         <div className="item__detail">
-            <ItemDetail product={item} />
+        {(loading)?
+        <Loader />
+        :
+        <ItemDetail product={item} />
+        }
         </div>
     )
 }

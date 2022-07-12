@@ -10,6 +10,8 @@ export const FunctionProvider = ({children}) => {
     const [quantity, setQuantity] = useState(0);
     const [total, setTotal] = useState(0);
 
+    const [query, setQuery] = useState();
+    
     const isOnCart = (id) =>{
         const cartFind = cart.find(((prod) => (prod.id === id)));
         if (cartFind !== undefined) {
@@ -60,6 +62,15 @@ export const FunctionProvider = ({children}) => {
         setCart([]);
     }
 
+    const handleSearch = (e) => {
+        const inputValue = e.target.value;
+        setQuery(inputValue);
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+    }
+
     const contextValues = {
         cart : cart,
         quantity: quantity,
@@ -69,7 +80,12 @@ export const FunctionProvider = ({children}) => {
         updateWidget : updateWidget,
         removeProduct : removeProduct,
         clearCart : clearCart,
-        totalPrice : totalPrice
+        totalPrice : totalPrice,
+
+        query : query,
+        handleSearch : handleSearch,
+        handleSubmit : handleSubmit
+    
     }
 
     return(

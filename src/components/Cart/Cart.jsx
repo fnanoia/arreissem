@@ -1,10 +1,10 @@
 import { useState, useContext } from "react";
-import { context } from "./CartContext";
-import CartItem from "./CartItem";
+import { context } from "../Context/CartContext";
+import CartItem from "../Cart/CartItem";
 import {Link} from "react-router-dom";
-import Form from "./Form";
+import Form from "../Form";
 import { addDoc, serverTimestamp, collection } from "firebase/firestore";
-import { db } from "../Firebase";
+import { db } from "../../Firebase";
 
 function Cart(){
 
