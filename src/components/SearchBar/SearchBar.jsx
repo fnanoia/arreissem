@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { context } from "./Context/CartContext";
+import { context } from "../Context/CartContext";
 import { TbTool } from "react-icons/tb";
 import { Link } from  "react-router-dom";
 

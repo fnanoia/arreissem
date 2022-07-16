@@ -1,10 +1,12 @@
 import { useState, useContext } from "react";
 import { context } from "../Context/CartContext";
-import CartItem from "../Cart/CartItem";
 import {Link} from "react-router-dom";
-import Form from "../Form";
 import { addDoc, serverTimestamp, collection } from "firebase/firestore";
 import { db } from "../../Firebase";
+import { RiDeleteBin5Line } from "react-icons/ri";
+import toast from 'react-hot-toast';
+import Form from "../Form/Form";
+import CartItem from "../Cart/CartItem";
 
 function Cart(){
 
@@ -15,8 +17,8 @@ function Cart(){
       email: "",
       telefono: ""
     });
-
-    const handleOnChange = (e) =>{
+    
+      const handleOnChange = (e) =>{
       const { name, value } = e.target;
      
       setFormData({
@@ -27,7 +29,9 @@ function Cart(){
     
     const handleSubmit = (e) =>{
       e.preventDefault();
-    
+
+    if(formData.email === formData.email2){
+
     const firebaseObject = {
       buyer : {
         nombre: formData.nombre,
@@ -49,6 +53,10 @@ function Cart(){
     .catch((err) => {
       console.error(err);
     });
+    toast.success("Formulario enviado con exito");
+    }else{
+      toast.error("Los emails no coinciden");
+    }
     }
     
     
@@ -71,15 +79,15 @@ function Cart(){
 
             {cart.map((prod) =>
               <CartItem 
-              id = {prod.id} title = {prod.title} price = {prod.price} quantity = {prod.quantity} key={prod.id} />
+              id={prod.id} title={prod.title} price={prod.price} quantity={prod.quantity} key={prod.id} />
             )}
              
+            </div>
             <div className="cart__display__footer">
-              <div>Total: {totalPrice()}</div>
-              <div><button onClick={clearCart}>Clear</button></div>
+              <div>Total: ${totalPrice()}</div>
+              <div><button onClick={clearCart}><RiDeleteBin5Line/></button></div>
             </div> 
 
-            </div>
             <Form formData={formData} handleOnChange={handleOnChange} handleSubmit={handleSubmit} />
             </>
             }

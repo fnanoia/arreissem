@@ -41,16 +41,10 @@ export const FunctionProvider = ({children}) => {
         const cartSpread = [...cart];
         const new_product = {...product, quantity};
 
-        if(isOnCart(product.id)){
-            console.log(`${product.title} ya se agrego al carrito`);  
-        }else{
             cartSpread.push(new_product);
             setCart(cartSpread);
             setQuantity(new_product.quantity);
             setTotal(new_product.price);
-
-            console.log(`Agregado al carrito: x${quantity} ${product.title} $${product.price}`);
-        }
     }
 
     const removeProduct = (id) =>{

@@ -1,10 +1,10 @@
 import { useEffect, useState, useContext } from "react";
-import { context } from "./Context/CartContext";
+import { context } from "../Context/CartContext";
 import { useParams } from "react-router-dom";
 import { getDocs } from "firebase/firestore";
-import { collectionProducts } from "../Firebase";
-import ItemList from "./ItemList";
-import Loader from "./Loader";
+import { collectionProducts } from "../../Firebase";
+import ItemList from "../Item/ItemList";
+import Loader from "../Loader/Loader";
 
 function SearchContainer(){
 
@@ -32,7 +32,12 @@ function SearchContainer(){
             const responseSearchFilter = responseSearch.filter(
             (prod) => prod.title.toLowerCase().includes(query));
             
+            if(responseSearchFilter.length === 0){
+            const noResponse = [...responseSearchFilter];
+            setSearchedItems(noResponse);
+            }else{
             setSearchedItems(responseSearchFilter);
+            }
             
         })
         .catch((err) => {
@@ -51,12 +56,13 @@ function SearchContainer(){
 
         <div className="item__list">
             {
-            (loading) ?
-            <Loader />
-            :
-            <ItemList products={searchedItems} /> 
+                (loading) ?
+                <Loader />
+                :
+                <ItemList products={searchedItems} />  
             }       
         </div>
+             
     )   
 }
 
