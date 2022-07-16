@@ -19,12 +19,13 @@ En la parte del UI, la maquetacion esta hecha en CSS3, utilizando dos librerias 
 
 #### Funcionalidades extra
 
-La aplicacion cuenta con una search-bar para filtrar los productos de forma mas rapida y personalizada. Esta conectada con la BD, para traer la informacion que solicita el usuario y visualizarla en la navegacion.
+La aplicacion cuenta con una search-bar para filtrar los productos de forma mas rapida y personalizada. Esta conectada con la BD, para traer la informacion que solicita el usuario y visualizarla en la navegacion
 
 
 #### Uso/instalacion
 
-Para experimentar la aplicacion, los pasos a seguir son: hacer una copia del repositorio de Github, y listar 2 comandos en la terminal para inicializa el proyecto en el navegador
+Para experimentar la aplicacion, los pasos a seguir son: 
+hacer una copia del repositorio de Github, y listar 2 comandos en la terminal para inicializar el proyecto en el navegador. Primero abrimos un terminal y nos situamos en la carpeta donde se va a descargar el proyecto. Luego ingresamos los siguientes comandos:
 ```
 git clone https://github.com/fnanoia/arreissem.git
 npm i

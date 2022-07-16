@@ -51,14 +51,13 @@ function Cart(){
       clearCart();
     })
     .catch((err) => {
-      console.error(err);
+      toast.error(err);
     });
-    toast.success("Formulario enviado con exito");
+    toast.success("Formulario enviado con exito")
     }else{
-      toast.error("Los emails no coinciden");
+      toast.error("Los emails no coinciden")
     }
-    }
-    
+    }    
     
     if(dataId !== undefined){
       return(
@@ -74,19 +73,17 @@ function Cart(){
             <div><Link to={`/`}>Ver productos</Link></div>
             </div>
             :
-            <>
-            <div className="cart__display">
-
+            <>            
             {cart.map((prod) =>
               <CartItem 
               id={prod.id} title={prod.title} price={prod.price} quantity={prod.quantity} key={prod.id} />
             )}
              
-            </div>
             <div className="cart__display__footer">
               <div>Total: ${totalPrice()}</div>
               <div><button onClick={clearCart}><RiDeleteBin5Line/></button></div>
             </div> 
+            
 
             <Form formData={formData} handleOnChange={handleOnChange} handleSubmit={handleSubmit} />
             </>

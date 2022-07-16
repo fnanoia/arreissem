@@ -20,10 +20,10 @@ function ItemDetail({ product }) {
             setCartBtn(false);
             
             if(isOnCart(product.id)){
-                toast(`${product.title} ya se agrego al carrito`);  
+                toast.error(`${product.title} ya se agrego al carrito`)
             }else{
                 addProduct(product, selectedCounter);
-                toast(`${product.title} agregado al carrito`);
+                toast.success(`${product.title} agregado al carrito`)
             }
         }
     
@@ -45,7 +45,7 @@ function ItemDetail({ product }) {
         <ItemCount initial={1} stock={product.stock} onAdd={onAdd}/> :
         <div className="card__item__detail__added">
         <button>
-        <Link to="/cart">Terminar mi compra</Link>
+        <Link to="/cart">Terminar compra</Link>
         </button>
         <button>
         <Link to="/">Agregar mas productos</Link>

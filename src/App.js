@@ -24,7 +24,33 @@ function App(){
         </Routes>
 
     <Footer/>
-    <Toaster />
+    <Toaster 
+    toastOptions={
+        {success: 
+            {position: 'top-right',
+            style: {
+                border: '1px solid #4A6572',
+                padding: '16px',
+                color: '#344955',
+            },
+            iconTheme: {
+                primary: '#344955',
+                secondary: '#E9E9EB',
+            }},
+        error: 
+            {position: 'top-right',
+            style: {
+                border: '1px solid #4A6572',
+                padding: '16px',
+                color: '#344955',
+            },
+            iconTheme: {
+                primary: '#344955',
+                secondary: '#E9E9EB',
+            }}
+        }
+        }
+    />
     </FunctionProvider>
     </BrowserRouter>
     )

@@ -4,6 +4,7 @@ import { collectionProducts } from "../../Firebase";
 import { getDocs, query, where } from "firebase/firestore";
 import ItemList from "./ItemList";
 import Loader from "../Loader/Loader";
+import toast from 'react-hot-toast';
 
 function ItemListContainer(){
 
@@ -35,7 +36,7 @@ function ItemListContainer(){
             setItems(responseProducts);
         })
         .catch((err) => {
-            console.error(err);
+            toast.error(err);
         });
 
     }, [category]);

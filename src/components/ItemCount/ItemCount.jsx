@@ -8,7 +8,9 @@ function ItemCount({initial, stock, onAdd}){
     function add(){
         if(counter < stock){
         setCounter(counter + 1);
-        }else{toast("Out of stock");}
+        }else{
+        toast.error("Out of stock")
+      }
     }
 
     function substract(){
@@ -19,9 +21,9 @@ function ItemCount({initial, stock, onAdd}){
 
     function push(){
         if(counter > stock){
-        toast("Out of stock")
+        toast.error("Out of stock")
         }else if(counter === 0){
-        toast("Debes seleccionar al menos 1 producto")
+        toast.error("Debes seleccionar al menos 1 producto")
         }else{
         onAdd(counter);
         }

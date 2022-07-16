@@ -11,13 +11,13 @@ function Navbar(){
         <div><LogoWidget /></div>
         <div><SearchBar /></div>
     </div>
-    <div className="menu">
-        <ul>
-            <li><NavLink to="/category/bosch">Bosch</NavLink></li>
-            <li><NavLink to="/category/skil">Skil</NavLink></li>            
-            <li><NavLink to="/category/dewalt">DeWalt</NavLink></li>
-            <div><NavLink to="/cart"><CartWidget /></NavLink></div>
-        </ul>
+    <div className="menu__categories">
+        <div><NavLink to="/category/bosch">Bosch</NavLink></div>
+        <div><NavLink to="/category/skil">Skil</NavLink></div>            
+        <div><NavLink to="/category/dewalt">DeWalt</NavLink></div>
+    </div>
+    <div className="menu__cart">
+        <div><NavLink to="/cart"><CartWidget /></NavLink></div>
     </div>
     </>
     )
