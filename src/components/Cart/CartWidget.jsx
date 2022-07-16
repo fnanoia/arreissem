@@ -1,6 +1,6 @@
 import { FaShoppingCart } from "react-icons/fa";
 import { useContext } from "react";
-import { context } from "./Context/CartContext";
+import { context } from "../Context/CartContext";
 
 
 function CartWidget(){

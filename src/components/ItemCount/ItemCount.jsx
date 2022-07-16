@@ -1,26 +1,29 @@
 import { useState } from "react";
+import toast from 'react-hot-toast';
 
 function ItemCount({initial, stock, onAdd}){
 
     const [counter, setCounter] = useState(initial);
 
-    function sumar(){
+    function add(){
         if(counter < stock){
         setCounter(counter + 1);
-        }else{console.log("Out of stock")}
+        }else{
+        toast.error("Out of stock")
+      }
     }
 
-    function restar(){
+    function substract(){
         if(counter > 0){
         setCounter(counter - 1);
         }
     }
 
-    function agregar(){
+    function push(){
         if(counter > stock){
-        console.log("Out of stock");
+        toast.error("Out of stock")
         }else if(counter === 0){
-        console.log("Debes seleccionar al menos 1 producto");
+        toast.error("Debes seleccionar al menos 1 producto")
         }else{
         onAdd(counter);
         }
@@ -28,10 +31,10 @@ function ItemCount({initial, stock, onAdd}){
 
   return (
     <div className="item__counter">
-    <div><button onClick={restar}>-</button></div>
+    <div><button onClick={substract}>-</button></div>
     <div>{counter}</div>
-    <div><button onClick={sumar}>+</button></div>
-    <div><button onClick={agregar}>Agregar</button></div>
+    <div><button onClick={add}>+</button></div>
+    <div><button onClick={push}>Agregar</button></div>
     </div>
   )
 }

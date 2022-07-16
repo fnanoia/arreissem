@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { collectionProducts } from "../Firebase";
+import { collectionProducts } from "../../Firebase";
 import { getDocs, query, where } from "firebase/firestore";
 import ItemList from "./ItemList";
-import Loader from "./Loader";
+import Loader from "../Loader/Loader";
+import toast from 'react-hot-toast';
 
 function ItemListContainer(){
 
@@ -24,12 +25,9 @@ function ItemListContainer(){
         collectionProducts;
         
         getDocs(ref).then((response) => {
-            //creo una const para almacenar la respuesta de la promesa, es decir los datos
-            //lo mapeo por que la promesa me retorna un array con los productos
+            
             const responseProducts = response.docs.map((doc) => {
-                //con el metodo .data() saco la info
-                //id es el que genera Firestore por defecto, entonces lo tengo que llamar aparte
-                //se lo incluyo a la const y retorno el obj con el id de firebase incluido
+                
                    const responseDataProducts = doc.data();
                    responseDataProducts.id = doc.id;
                    return responseDataProducts
@@ -38,15 +36,10 @@ function ItemListContainer(){
             setItems(responseProducts);
         })
         .catch((err) => {
-            console.error(err);
+            toast.error(err);
         });
 
     }, [category]);
-
-//opcional agregar una nueva propiedad al objeto que cargamos a la coleccion
-//esta es la que se va a mostrar cuando naveguemos a items/id
-//actualmente la ruta nos muestra el id automatico de Firebase
-
     
     return (    
         <div className="item__list">
