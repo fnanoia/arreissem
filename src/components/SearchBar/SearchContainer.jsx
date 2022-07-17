@@ -12,13 +12,13 @@ function SearchContainer(){
 
     const [searchedItems, setSearchedItems] = useState([]);
     const [loading, setLoading] = useState(true);
-
+    
     const {search} = useParams();
 
     useEffect(() =>{
 
         setLoading(false);
-
+        
         const ref = collectionProducts;
 
         getDocs(ref).then((response) => {
@@ -46,12 +46,15 @@ function SearchContainer(){
 
     }, [search]);
 
+   
     
     if(searchedItems.length === 0){
     return(
-        <div className="item__list">No hay resultados</div>
-    )};
-        
+            <div className="item__list">No hay resultados</div>       
+        )
+    }
+    
+
     return(
 
         <div className="item__list">
